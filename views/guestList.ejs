@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Invited:</h1>
+  <ul>
+    <% invitedList.forEach((guest) => { %>
+      <li>
+        <h3><%= guest.name %></h3>
+        <p>Status: 
+          <%= guest.isAccept === true
+             ? "Accepted"
+             : guest.isAccept === false
+             ? "Fucker declined"
+             : "No response from the dumb fuck yet"%>
+        </p>
+      </li>
+    <% }) %>
+  </ul>
+  <% if(locals.idiots) { %>
+    <h1>Idiots who thought they were invited:</h1>
+    <ul>
+      <% idiots.forEach((idiot) => { %>
+        <li><h3><%= idiot %></h3></li>
+      <% }) %>
+    </ul>
+  <% } %>
+</body>
+</html>

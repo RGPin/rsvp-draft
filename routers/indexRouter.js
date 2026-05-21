@@ -1,13 +1,11 @@
 const express = require("express");
 
 const indexRouter = express.Router();
+const controller = require("../controllers/indexController");
 
-const invitedList = ["christian", "ryan", "molina"];
-
-indexRouter.get("/", (req, res) => res.render("index"));
-indexRouter.post("/rsvp", (req, res) => {
-  const invited = invitedList.includes(req.body.response.toLowerCase());
-  res.render("response", { invited });
-});
+indexRouter.get("/", controller.indexGet);
+indexRouter.post("/rsvp", controller.formResponsePost);
+indexRouter.post("/response/:guestName", controller.guestResponsePost);
+indexRouter.get("/supersecretstuff", controller.displayListGet);
 
 module.exports = indexRouter;
