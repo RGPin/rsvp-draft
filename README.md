@@ -2,7 +2,7 @@
 
 Build Plan:
 
-1. Make rsvp form work locally
+1. Make rsvp form work locally (done. looks shitty but the very basic fn works)
 2. Integrate with postgresql
 3. Tokenized links
 4. Deploy to render
