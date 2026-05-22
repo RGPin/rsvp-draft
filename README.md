@@ -7,3 +7,5 @@ Build Plan:
 3. Tokenized links (nah, it's still draft but for final prod yeah)
 4. Deploy to render AND neon(db)
 5. Google sheets synced
+
+// note: maybe add aria attributes too for screen readers
