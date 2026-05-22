@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS invites (
   guest_name TEXT NOT NULL,
   token TEXT NOT NULL UNIQUE DEFAULT gen_random_uuid(),
   responded BOOLEAN NOT NULL DEFAULT FALSE,
-  attending BOOLEAN
+  attending BOOLEAN,
+  responded_at TIMESTAMPTZ
 );
 
 INSERT INTO invites (guest_name)
