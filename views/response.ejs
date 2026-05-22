@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex">
     <title>Response</title>
   </head>
   <body>
-    <% if(invited) { %>
+    <% if(invited !== null) { %>
       <%- include("invited.ejs") %>
     <% } else { %>
       <h1>Fuck off</h1>

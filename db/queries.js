@@ -28,6 +28,9 @@ async function getAllInvites() {
  * @returns {Promise<{guest_name: string, token: string} | null>}
  */
 async function checkInvites(personName) {
+  if (!personName) {
+    throw new Error("checkInvites error: personName must be string.");
+  }
   try {
     const { rows } = await pool.query(
       `
@@ -56,6 +59,12 @@ async function checkInvites(personName) {
  * } | null>}
  */
 async function updateGuestResponse(token, response) {
+  if (typeof response !== "boolean") {
+    throw new Error("updateGuestResponse error: response must be boolean.");
+  }
+  if (!token) {
+    throw new Error("updateGuestResponse error: token must be provided.");
+  }
   try {
     const { rows } = await pool.query(
       `

@@ -1,6 +1,9 @@
 <div>
-  <h1>You are invited</h1>
-  <form method="POST" action="/response/<%= guestName %>">
+  <h1>You <%= invited['guest_name'] %> are invited</h1>
+  <p>
+    <i>Please check if this you else <a href="/">try again</a></i>
+  </p>
+  <form method="POST" action="/response/<%= invited.token %>">
     <input type="radio" id="accept" name="response" value="accept" />
     <label for="accept">Accept</label>
 
