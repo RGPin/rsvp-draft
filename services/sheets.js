@@ -14,8 +14,11 @@ const sheets = google.sheets({
 
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 
+/**
+ *
+ * @param {Object[]} invites - list of all invites
+ */
 async function updateSheets(invites) {
-  console.log("seeding...");
   await sheets.spreadsheets.values.update({
     spreadsheetId: SPREADSHEET_ID,
     range: "Sheet1!A:E",
@@ -34,7 +37,6 @@ async function updateSheets(invites) {
       ],
     },
   });
-  console.log("done");
 }
 
 module.exports = updateSheets;

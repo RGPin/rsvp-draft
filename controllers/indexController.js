@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+const updateSheets = require("../services/sheets");
 
 const indexGet = (req, res) => res.render("index");
 
@@ -12,6 +13,8 @@ const guestResponsePost = async (req, res) => {
   const isAccept = req.body.response === "accept";
   const { token } = req.params;
   const guestObj = await db.updateGuestResponse(token, isAccept);
+  const invites = await db.getAllInvites();
+  await updateSheets(invites);
   res.render(isAccept ? "accepted" : "declined");
 };
 
