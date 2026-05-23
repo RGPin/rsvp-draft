@@ -8,7 +8,8 @@
     "populateDev": "node --env-file=.env db/populateDB.js",
     "populate": "node db/populateDB.js",
     "dev": "node --env-file=.env --watch app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "testSheet": "node --env-file=.env services/sheets.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "dependencies": {
     "ejs": "^5.0.2",
     "express": "^5.2.1",
+    "googleapis": "^172.0.0",
     "pg": "^8.21.0"
   }
 }
