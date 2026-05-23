@@ -19,24 +19,28 @@ const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
  * @param {Object[]} invites - list of all invites
  */
 async function updateSheets(invites) {
-  await sheets.spreadsheets.values.update({
-    spreadsheetId: SPREADSHEET_ID,
-    range: "Sheet1!A:E",
-    valueInputOption: "USER_ENTERED",
-    requestBody: {
-      values: [
-        ["Guest Name", "Responded", "Attending", "Responded At"],
-        ...invites.map((guest) => [
-          guest.guest_name,
-          guest.responded,
-          guest.attending,
-          guest.responded_at
-            ? new Date(guest.responded_at).toLocaleDateString()
-            : "",
-        ]),
-      ],
-    },
-  });
+  try {
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A:E",
+      valueInputOption: "USER_ENTERED",
+      requestBody: {
+        values: [
+          ["Guest Name", "Responded", "Attending", "Responded At"],
+          ...invites.map((guest) => [
+            guest.guest_name,
+            guest.responded,
+            guest.attending,
+            guest.responded_at
+              ? new Date(guest.responded_at).toLocaleDateString()
+              : "",
+          ]),
+        ],
+      },
+    });
+  } catch (error) {
+    throw new Error(`updateSheets failed: ${error.message}`);
+  }
 }
 
 module.exports = updateSheets;
