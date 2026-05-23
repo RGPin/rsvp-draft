@@ -39,7 +39,9 @@ async function updateSheets(invites) {
       },
     });
   } catch (error) {
-    throw new Error(`updateSheets failed: ${error.message}`);
+    // throw new Error(`updateSheets failed: ${error.message}`);
+    console.error(error);
+    throw error;
   }
 }
 
