@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS invites (
   responded_at TIMESTAMPTZ
 );
 
+TRUNCATE invites RESTART IDENTITY;
+
 INSERT INTO invites (guest_name)
 VALUES
   ('Christian'),
