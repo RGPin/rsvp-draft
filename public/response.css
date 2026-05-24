@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.invited-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.invited-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.uninvited-container {
+  text-align: center;
+}
+
+.uninvited-container img {
+  width: 300px;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}

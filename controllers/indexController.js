@@ -26,9 +26,27 @@ const displayListGet = async (req, res) => {
   res.render("guestList", { invitedList });
 };
 
+const addGuestPost = async (req, res) => {
+  const { newGuest } = req.body;
+  await db.addNewGuest(newGuest);
+  const invites = await db.getAllInvites();
+  await updateSheets(invites);
+  res.redirect("/supersecretstuff");
+};
+
+const removeGuestPost = async (req, res) => {
+  const { token } = req.params;
+  await db.removeGuest(token);
+  const invites = await db.getAllInvites();
+  await updateSheets(invites);
+  res.redirect("/supersecretstuff");
+};
+
 module.exports = {
   indexGet,
   formResponsePost,
   guestResponsePost,
   displayListGet,
+  addGuestPost,
+  removeGuestPost,
 };

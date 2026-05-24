@@ -21,9 +21,14 @@ const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
  */
 async function updateSheets(invites) {
   try {
+    await sheets.spreadsheets.values.clear({
+      spreadsheetId: SPREADSHEET_ID,
+      range: "Sheet1!A:D",
+    });
+
     await sheets.spreadsheets.values.update({
       spreadsheetId: SPREADSHEET_ID,
-      range: "Sheet1!A:E",
+      range: "Sheet1!A:D",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [

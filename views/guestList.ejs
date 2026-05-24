@@ -4,21 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/guestList.css" />
   <title>Document</title>
 </head>
 <body>
+  <form method="POST" action="/supersecretstuff/add">
+    <h1>Add new guest</h1>
+    <label for="newGuest">Enter guest name: 
+      <input type="text" name="newGuest" id="newGuest" minlength="3" required/>
+    </label>
+    <button type="submit" style="cursor: pointer;">Add guest</button>
+  </form>
   <h1>Invited:</h1>
   <ul>
     <% invitedList.forEach((guest) => { %>
-      <li>
-        <h3><%= guest['guest_name'] %></h3>
-        <p>Status: 
-          <%= guest.attending === true
-             ? "Accepted"
-             : guest.attending === false
-             ? "Fucker declined"
-             : "No response from the dumb fuck yet"%>
-        </p>
+      <li class="user-item">
+        <div>
+          <h3><%= guest['guest_name'] %></h3>
+          <p>Status: 
+            <%= guest.attending === true
+              ? "Accepted"
+              : guest.attending === false
+              ? "Fucker declined"
+              : "No response from the dumb fuck yet"%>
+          </p>
+        </div>
+        <form method="POST" action="/supersecretstuff/remove/<%= guest.token %>">
+          <button type="submit" style="cursor: pointer;">Remove guest</button>
+        </form>
       </li>
     <% }) %>
   </ul>

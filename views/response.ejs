@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="response.css" />
     <title>Response</title>
   </head>
   <body>
     <% if(invited !== null) { %>
       <%- include("invited.ejs") %>
     <% } else { %>
-      <h1>Fuck off</h1>
+      <%- include("uninvited.ejs") %>
     <% } %>
     <a href="/">Back to home</a>
   </body>

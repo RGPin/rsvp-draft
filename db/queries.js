@@ -12,7 +12,7 @@ async function getAllInvites() {
   try {
     const { rows } = await pool.query(
       `
-      SELECT guest_name, responded, attending, responded_at 
+      SELECT guest_name, responded, attending, responded_at, token
       FROM invites
       `,
     );
@@ -77,10 +77,55 @@ async function updateGuestResponse(token, response) {
       `,
       [response, token],
     );
-    if (!rows[0]) return null;
-    return rows[0];
+    return rows[0] || null;
   } catch (error) {
     throw new Error(`updateGuestResponse failed ${error.message}`);
+  }
+}
+
+/**
+ *
+ * @param {string} guestName
+ * @returns {Promise<{
+ * guest_name: string,
+ * token: string
+ * }|null>}
+ */
+async function addNewGuest(guestName) {
+  if (typeof guestName !== "string") {
+    throw new Error("addNewGuest error: guestName must be string.");
+  }
+  try {
+    const { rows } = await pool.query(
+      `
+      INSERT INTO invites (guest_name)
+      VALUES ($1)
+      RETURNING guest_name, token;
+      `,
+      [guestName],
+    );
+    return rows[0] || null;
+  } catch (error) {
+    throw new Error(`addNewGuest failed ${error.message}`);
+  }
+}
+
+async function removeGuest(token) {
+  if (typeof token !== "string") {
+    throw new Error("removeGuest error: token must be string.");
+  }
+  try {
+    const { rows } = await pool.query(
+      `
+      DELETE FROM invites
+      WHERE token = $1
+      RETURNING guest_name, token;
+      `,
+      [token],
+    );
+    return rows[0] || null;
+  } catch (error) {
+    throw new Error(`removeGuest failed ${error.message}`);
   }
 }
 
@@ -88,4 +133,6 @@ module.exports = {
   getAllInvites,
   checkInvites,
   updateGuestResponse,
+  addNewGuest,
+  removeGuest,
 };
