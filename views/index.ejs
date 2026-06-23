@@ -5,17 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="index.css" />
+    <script src="/js/index.js" defer></script>
     <title>Home</title>
   </head>
   <body>
     <div class="container">
-      <h1>RSVP Draft</h1>
-      <form method="POST" action="/rsvp">
-        <label for="response">
-          Enter your name:
-          <input type="text" name="guestName" id="guestName" required />
-        </label>
-      </form>
+      <div class="nav-container">
+        <div class="nav-actions">
+          <button>Mute</button>
+          <button>Dark</button>
+        </div>
+        <nav class="nav-bar">
+          <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#countdown">Countdown</a></li>
+            <li class="nav-item"><a href="#timeline">Timeline</a></li>
+            <li class="nav-item"><a href="#event-details">Event Details</a></li>
+            <li class="nav-item"><a href="#sponsors">Sponsors</a></li>
+            <li class="nav-item"><a href="#entourage">Entourage</a></li>
+            <li class="nav-item"><a href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a href="#love-messages">Love Messages</a></li>
+            <li class="nav-item"><a href="#rsvp">RSVP</a></li>
+            <li class="nav-item"><a href="#attire-motif">Attire & Motif</a></li>
+            <li class="nav-item"><a href="#gift-guide">Gift Guide</a></li>
+            <li class="nav-item"><a href="#extra-info">Extra Info</a></li>
+          </ul>
+        </nav>
+      </div>
+      <section class="home" id="home">Home</section>
+      <section class="countdown" id="countdown">countdown</section>
+      <section class="timeline" id="timeline">timeline</section>
+      <section class="event-details" id="event-details">event-details</section>
+      <section class="sponsors" id="sponsors">sponsors</section>
+      <section class="entourage" id="entourage">entourage</section>
+      <section class="gallery" id="gallery">gallery</section>
+      <section class="love-messages" id="love-messages">love-messages</section>
+      <section class="rsvp" id="rsvp">rsvp</section>
+      <section class="attire-motif" id="attire-motif">attire-motif</section>
+      <section class="gift-guide" id="gift-guide">gift-guide</section>
+      <section class="extra-info" id="extra-info">extra-info</section>
     </div>
   </body>
 </html>

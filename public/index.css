@@ -1,13 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button, 
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"] {
+  background: transparent;
+  color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Classic elegant: */
+:root {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 64px;
+
+  --text-xs: 0.75rem;   /* 12px - Captions / Small labels */
+  --text-sm: 0.875rem;  /* 14px - Secondary body / Table text */
+  --text-base: 1rem;    /* 16px - Standard body text */
+  --text-md: 1.25rem;   /* 20px - H3 / Subheadings */
+  --text-lg: 1.5rem;    /* 24px - H2 / Section titles */
+  --text-xl: 2.25rem;   /* 36px - H1 / Page titles */
+
+  --heading-font: "Playfair Display", serif;
+  --body-font: "Inter", sans-serif;
+  --color-bg: #FAF7F2;
+  --color-surface: #FFFFFF;
+
+  --color-text-main: #3E2F2F;
+  --color-text-muted: #7A6A6A;
+  --color-border: #E8DDD5;
+
+  --color-primary: #C08497;
+  --color-primary-hover: #A96B80;
+
+   /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
+  font-family: var(--body-font);
+  background-color: var(--color-bg);
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.nav-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.nav-bar {
+  margin-bottom: 100vh;
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    text-align: right;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: none;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+}
+
+section {
+  height: 100vh;
 }
