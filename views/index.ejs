@@ -33,9 +33,145 @@
           </ul>
         </nav>
       </div>
-      <section class="home" id="home">Home</section>
-      <section class="countdown" id="countdown">countdown</section>
-      <section class="timeline" id="timeline">timeline</section>
+      <section class="home" id="home">
+        <div class="home-container">
+          <p class="home-text">Witness our union</p>
+
+          <h1 class="home-heading">
+            <span class="name">Christian Ryan Molina</span>
+            <span class="ampersand">and</span>
+            <span class="name">Jasmin Villon</span>
+          </h1>
+
+          <blockquote class="home-quote">
+            <p>
+              "A marriage is always made up of two people who are prepared to
+              swear that only the other one snores."
+            </p>
+          </blockquote>
+
+          <time datetime="2027-06-26" class="home-date">
+            <span class="home-text">June</span>
+            <div class="home-date-day-container">
+              <hr class="divider" />
+              <span class="day">26</span>
+              <hr class="divider" />
+            </div>
+            <span class="home-text">2027</span>
+          </time>
+
+          <address class="home-location">
+            <p class="location home-text">LOCATION GOES HERE</p>
+            <p class="extra">extra info in here yeah?</p>
+          </address>
+
+          <div class="home-actions">
+            <a href="#rsvp" class="action">Confirm Attendance</a>
+            <label for="palettes" class="sr-only">Choose a color palette</label>
+            <select name="palettes" id="palettes" class="action">
+              <option value="" disabled selected>
+                Choose palette (dev mode)
+              </option>
+              <option>Choose palette</option>
+              <option>Choose palette</option>
+              <option>Choose palette</option>
+              <option>Choose palette</option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <section class="countdown" id="countdown" aria-live="polite">
+        <div class="countdown-container">
+          <h2 class="countdown-heading">It's the final countdown!</h2>
+
+          <div class="timer" role="timer" aria-atomic="true">
+            <div class="timer-item">
+              <p class="timer-count"><span id="days"></span></p>
+              <p class="timer-label">DAYS</p>
+            </div>
+            <div class="timer-item">
+              <p class="timer-count"><span id="hours"></span></p>
+              <p class="timer-label">HOURS</p>
+            </div>
+            <div class="timer-item">
+              <p class="timer-count"><span id="minutes"></span></p>
+              <p class="timer-label">MINUTES</p>
+            </div>
+            <div class="timer-item">
+              <p class="timer-count"><span id="seconds"></span></p>
+              <p class="timer-label">SECONDS</p>
+            </div>
+          </div>
+
+          <blockquote class="countdown-quote">
+            <p>
+              "My favorite part of a deadline is the whooshing sound it makes as
+              it flies right by me."
+            </p>
+          </blockquote>
+
+          <time datetime="2027-06-26" class="countdown-date countdown-text">
+            JUNE 26, 2027
+          </time>
+
+          <address class="countdown-location">
+            <p class="location countdown-text">LOCATION GOES HERE</p>
+            <p class="extra">extra info in here yeah?</p>
+          </address>
+        </div>
+      </section>
+      <section class="timeline" id="timeline">
+        <div class="timeline-container">
+          <h2 class="timeline-header">Wedding Timeline</h2>
+          <p class="timeline-subheader">Program Timetable</p>
+          <hr class="timeline-divider" />
+          <ol class="timeline-list">
+            <li class="timeline-article">
+              <div class="article-icon" aria-hidden="true"><span>:(</span></div>
+              <div class="timeline-item">
+                <time class="timeline-time" datetime="12:00">12:00 PM</time>
+                <h3 class="timeline-event">Starting Event</h3>
+                <p class="timeline-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda repellendus laborum veritatis dignissimos dolores
+                  unde!
+                </p>
+              </div>
+            </li>
+            <li class="timeline-article">
+              <div class="article-icon" aria-hidden="true"><span>:|</span></div>
+              <div class="timeline-item">
+                <time class="timeline-time" datetime="15:00">3:00 PM</time>
+                <h3 class="timeline-event">Middle Event</h3>
+                <p class="timeline-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                  corporis amet nulla id expedita inventore fugit numquam dicta
+                  eius unde.
+                </p>
+              </div>
+            </li>
+            <li class="timeline-article">
+              <div class="article-icon" aria-hidden="true"><span>:)</span></div>
+              <div class="timeline-item">
+                <time class="timeline-time" datetime="17:00">5:00 PM</time>
+                <h3 class="timeline-event">Ending Event</h3>
+                <p class="timeline-details">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam quasi explicabo dolore numquam?
+                </p>
+              </div>
+            </li>
+            <li class="timeline-article">
+              <div class="article-icon" aria-hidden="true"><span>:D</span></div>
+              <div class="timeline-item">
+                <time class="timeline-time" datetime="21:00">9:00 PM</time>
+                <h3 class="timeline-event">Main Event</h3>
+                <p class="timeline-details">Inuman time</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
       <section class="event-details" id="event-details">event-details</section>
       <section class="sponsors" id="sponsors">sponsors</section>
       <section class="entourage" id="entourage">entourage</section>
