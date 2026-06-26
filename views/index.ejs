@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="index.css" />
-    <script src="/js/index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,300;6..96,500;6..96,700&family=Cinzel:wght@400;500;700&family=Cormorant+Garamond:wght@300;500;700&family=DM+Sans:wght@300;500;700&family=DM+Serif+Display&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Inter:wght@300;500;700&family=Jost:wght@300;500;700&family=Lato:wght@300;400;700&family=Lora:wght@400;500;700&family=Manrope:wght@300;500;700&family=Montserrat:wght@300;500;700&family=Nunito:wght@300;500;700&family=Parisienne&family=Playfair+Display:wght@300;500;700&family=Plus+Jakarta+Sans:wght@300;500;700&family=Source+Sans+3:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/js/index.js" defer type="module"></script>
     <title>Home</title>
   </head>
   <body>
@@ -72,10 +78,20 @@
               <option value="" disabled selected>
                 Choose palette (dev mode)
               </option>
-              <option>Choose palette</option>
-              <option>Choose palette</option>
-              <option>Choose palette</option>
-              <option>Choose palette</option>
+              <option value="classic-elegant">Classic Elegant</option>
+              <option value="modern-sage-green">Modern Sage Green</option>
+              <option value="romantic-blush">Romantic Blush</option>
+              <option value="luxury-champagne">Luxury Champagne</option>
+              <option value="white-&-terracotta">White And Terracotta</option>
+              <option value="sage-&-olive">Sage And Olive</option>
+              <option value="champagne-&-slate-blue">
+                Champagne And Slate Blue
+              </option>
+              <option value="terracotta-&-blush">Terracotta And Blush</option>
+              <option value="modern-minimalist">Modern Minimalist</option>
+              <option value="rustic-botanical">Rustic Botanical</option>
+              <option value="moody-luxe">Moody Luxe</option>
+              <option value="sunset-boho">Sunset Boho</option>
             </select>
           </div>
         </div>
@@ -174,6 +190,8 @@
       </section>
       <section class="event-details" id="event-details">
         <div class="event-details-container">
+          <h2 class="event-details-heading">Event Details</h2>
+          <hr class="divider" />
           <div class="event-map-container">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d947.0087911312402!2d-64.82574465775576!3d18.29999999868523!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c051168c4c9f33d%3A0x4b2c4e6907c7bce7!2sLittle%20Saint%20James!5e0!3m2!1sen!2sph!4v1782400311389!5m2!1sen!2sph"
@@ -185,10 +203,160 @@
               referrerpolicy="strict-origin-when-cross-origin"
             ></iframe>
           </div>
+          <div class="event-map-details">
+            <div class="event-map-logo" aria-hidden="true">
+              <span>:)</span>
+            </div>
+            <address class="event-map-location">
+              <p class="location">LOCATION GOES HERE</p>
+              <p class="extra">extra info in here yeah?</p>
+            </address>
+            <time class="event-map-time" datetime="12:00">12:00 PM</time>
+          </div>
+          <h2 class="event-details-heading">Our Families</h2>
+          <hr class="divider" />
+          <div class="event-families-grid">
+            <article class="event-families-container">
+              <h3>BRIDE'S PARENTS</h3>
+              <div class="event-families">
+                <p class="parent-name">Linux Windows</p>
+                <span class="ampersand">&</span>
+                <p class="parent-name">Apple Android</p>
+              </div>
+            </article>
+            <article class="event-families-container">
+              <h3>GROOM'S PARENTS</h3>
+              <div class="event-families">
+                <p class="parent-name">Samsung Alibaba</p>
+                <span class="ampersand">&</span>
+                <p class="parent-name">Qwen Gemini</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
-      <section class="sponsors" id="sponsors">sponsors</section>
-      <section class="entourage" id="entourage">entourage</section>
+      <section class="sponsors" id="sponsors">
+        <div class="sponsors-container">
+          <h2 class="sponsors-heading">Ninong & Ninang</h2>
+          <hr class="divider" />
+          <div class="sponsors-grid">
+            <article class="ninoang-container">
+              <h3>NINONG</h3>
+              <ul class="ninoang-list">
+                <li>Ninong #1</li>
+                <li>Ninong #2</li>
+                <li>Ninong #3</li>
+                <li>Ninong #4</li>
+                <li>Ninong #5</li>
+              </ul>
+            </article>
+            <article class="ninoang-container">
+              <h3>NINANG</h3>
+              <ul class="ninoang-list">
+                <li>Ninang #1</li>
+                <li>Ninang #2</li>
+                <li>Ninang #3</li>
+                <li>Ninang #4</li>
+                <li>Ninang #5</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="entourage" id="entourage">
+        <div class="entourage-container">
+          <h2 class="entourage-heading">Entourage</h2>
+          <hr class="divider" />
+          <div class="entourage-grid">
+            <article class="entourage-card">
+              <h3>Best Man</h3>
+              <ul class="entourage-card-list">
+                <li>Best Asshole</li>
+              </ul>
+            </article>
+
+            <article class="entourage-card">
+              <h3>Maid of honor</h3>
+              <ul class="entourage-card-list">
+                <li>Maidenless</li>
+              </ul>
+            </article>
+
+            <article class="entourage-card">
+              <h3>Groomsmen</h3>
+              <ul class="entourage-card-list">
+                <li>Groomer Expert</li>
+                <li>Groomed by Groomer</li>
+                <li>Groomer Connoisseur</li>
+              </ul>
+            </article>
+
+            <article class="entourage-card">
+              <h3>Bridesmaids</h3>
+              <ul class="entourage-card-list">
+                <li>Self Proclaimed Bridesmaid</li>
+                <li>Totally Real Bridesmaid</li>
+                <li>Divorced Bridesmaid</li>
+              </ul>
+            </article>
+
+            <article class="entourage-card">
+              <h3>Flower Girls</h3>
+              <ul class="entourage-card-list">
+                <li>Poison Ivy</li>
+                <li>Swamp Man</li>
+              </ul>
+            </article>
+
+            <article class="entourage-card">
+              <h3>Ring Bearer</h3>
+              <ul class="entourage-card-list">
+                <li>Smeagol</li>
+              </ul>
+            </article>
+
+            <article class="entourage-card">
+              <h3>Bible Bearer</h3>
+              <ul class="entourage-card-list">
+                <li>Karen</li>
+              </ul>
+            </article>
+
+            <article class="entourage-card">
+              <h3>Coin Bearer</h3>
+              <ul class="entourage-card-list">
+                <li>Two-Face</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="sponsor-grid">
+            <article class="sponsor-card">
+              <h3>Cord Sponsors</h3>
+              <ul class="sponsor-card-list">
+                <li>Cable</li>
+                <li>Wire</li>
+              </ul>
+            </article>
+
+            <article class="sponsor-card">
+              <h3>Veil Sponsors</h3>
+              <ul class="sponsor-card-list">
+                <li>Enikk</li>
+                <li>Satella</li>
+              </ul>
+            </article>
+
+            <article class="sponsor-card">
+              <h3>Candle Sponsors</h3>
+              <ul class="sponsor-card-list">
+                <li>Mr. 3</li>
+                <li>Lumiere</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
       <section class="gallery" id="gallery">gallery</section>
       <section class="love-messages" id="love-messages">love-messages</section>
       <section class="rsvp" id="rsvp">rsvp</section>
