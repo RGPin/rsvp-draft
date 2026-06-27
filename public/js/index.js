@@ -119,4 +119,22 @@ document.addEventListener("DOMContentLoaded", () => {
     minutesSpan.textContent = padify(minutes);
     secondsSpan.textContent = padify(seconds);
   }, 1000);
+
+  //----------------Gallery----------------//
+  const carouselButtons = document.querySelectorAll(".carousel-btn");
+
+  carouselButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const offset = button.dataset.carouselBtn === "next" ? 1 : -1;
+      const slides = button.closest(".carousel").querySelector(".slides-list");
+
+      const activeSlide = slides.querySelector("[data-active]");
+      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+      if (newIndex < 0) newIndex = slides.children - 1;
+      if (newIndex >= slides.children.length) newIndex = 0;
+
+      slides.children[newIndex].dataset.active = true;
+      delete activeSlide.dataset.active;
+    });
+  });
 });
