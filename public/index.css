@@ -651,7 +651,7 @@ section {
     color: var(--color-text-main);
     cursor: pointer;
     padding: var(--space-xs) var(--space-lg);
-    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: rgba(0, 0, 0, 0.1); */
     height: 100%;
     width: 100px;
   }
