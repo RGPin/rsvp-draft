@@ -403,22 +403,152 @@
           </div>
         </div>
       </section>
-      <h1>
-        Hell nah. I'm tired. Choose a palette for now and decide what to add,
-        remove, modify
-      </h1>
-      <h1>TODO:</h1>
-      <ul>
-        <li>Animations</li>
-        <li>Music and mute button</li>
-        <li>Dark mode? nah</li>
-        <li>The remaining sections below</li>
-      </ul>
-      <section class="love-messages" id="love-messages">love-messages</section>
-      <section class="rsvp" id="rsvp">rsvp</section>
-      <section class="attire-motif" id="attire-motif">attire-motif</section>
-      <section class="gift-guide" id="gift-guide">gift-guide</section>
-      <section class="extra-info" id="extra-info">extra-info</section>
+      <section class="love-messages" id="love-messages">
+        <div class="love-messages-container">
+          <h2 class="love-messages-heading">Send A Message To The Lovebirds</h2>
+          <hr class="divider" />
+          <div class="form-container">
+            <form
+              onsubmit="
+                event.preventDefault();
+                alert('Chill. Design muna before backend feats');
+                this.reset();
+              "
+            >
+              <fieldset>
+                <div class="field-container">
+                  <label for="sender"> Enter your name/nickname/alias: </label>
+                  <input type="text" id="sender" name="sender" />
+                </div>
+
+                <div class="field-container">
+                  <label for="message"> Enter message: </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Congrats. Happy for you... tch"
+                  ></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="rsvp" id="rsvp">
+        <div class="rsvp-container">
+          <h2 class="rsvp-heading">Confirm Your Attendance</h2>
+          <p class="rsvp-subheader">
+            kindly confirm your attendance by may 13, 2027
+          </p>
+          <hr class="divider" />
+          <div class="form-container">
+            <form
+              onsubmit="
+                event.preventDefault();
+                alert('Like I said, chill. Design muna before backend feats');
+                this.reset();
+              "
+            >
+              <fieldset>
+                <div class="field-container">
+                  <label for="response"> Enter your first name: </label>
+                  <input type="text" name="firstname" id="firstname" required />
+                </div>
+                <div class="field-container">
+                  <label for="response"> Enter your last name: </label>
+                  <input type="text" name="lastname" id="lastname" required />
+                </div>
+                <button type="submit">Confirm Attendance</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="attire-motif" id="attire-motif">
+        <div class="attire-motif-container">
+          <h2 class="attire-motif-heading">Attire & Motif</h2>
+          <hr class="divider" />
+
+          <div class="details-container">
+            <div class="attire-container">
+              <h3 class="attire-heading detail-text">Dress Code</h3>
+              <p class="attire">Clown Outfit/Cosplay</p>
+            </div>
+            <p class="detail-text">please kindly follow the palette below</p>
+            <div class="motif-container">
+              <div class="motif-item">
+                <div class="motif motif-1"></div>
+                <p class="motif-label">RED</p>
+              </div>
+              <div class="motif-item">
+                <div class="motif motif-2"></div>
+                <p class="motif-label">YELLOW</p>
+              </div>
+              <div class="motif-item">
+                <div class="motif motif-3"></div>
+                <p class="motif-label">GREEN</p>
+              </div>
+              <div class="motif-item">
+                <div class="motif motif-4"></div>
+                <p class="motif-label">PURPLE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="gift-guide" id="gift-guide">
+        <div class="gift-guide-container">
+          <h2 class="gift-guide-heading">Gift Guide</h2>
+          <hr class="divider" />
+          <blockquote class="gift-guide-quote">
+            <p>
+              "They say that love is more important than money, but have you
+              ever tried to pay your bills with a hug? Fuckin hell yeah give
+              money if you want."
+            </p>
+          </blockquote>
+
+          <div class="guides-container">
+            <div class="guide">
+              <h3>GCASH</h3>
+              <p>09123456789</p>
+            </div>
+            <div class="guide">
+              <h3>BDO</h3>
+              <p>000123456789</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="extra-info" id="extra-info">
+        <div class="extra-info-container">
+          <h2 class="extra-info-heading">Additional Info</h2>
+          <hr class="divider" />
+
+          <div class="info-containers">
+            <div class="info-container">
+              <h3 class="info-heading">DRESS CODE</h3>
+              <p class="info">Clown Attire/Cosplay</p>
+            </div>
+
+            <div class="info-container">
+              <h3 class="info-heading">PARKING</h3>
+              <p class="info">Nah, use the goddamn public transport</p>
+            </div>
+
+            <div class="info-container">
+              <h3 class="info-heading">CONTACT</h3>
+              <p class="info">For inquiries, contact: 09123456789</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <p class="footer-heading">Jilver Ryan Tim & Sunshine Gatmen</p>
+        <time datetime="2027-06-26" class="footer-date">June 26, 2027</time>
+      </footer>
     </div>
   </body>
 </html>
