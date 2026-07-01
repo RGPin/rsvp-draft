@@ -44,18 +44,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const bgMusic = document.querySelector("#bg-music");
   const toggleBtn = document.querySelector("#toggle-music-btn");
 
-  const isPlaying =
-    !bgMusic.paused && !bgMusic.ended && bgMusic.currentTime > 0;
+  let isAttemptingPlay = false;
 
   const startMusic = () => {
+    if (isAttemptingPlay || !bgMusic.paused) return;
+
+    isAttemptingPlay = true;
     bgMusic.volume = 0.2;
-    bgMusic.play();
-    document.removeEventListener("click", startMusic);
-    document.removeEventListener("keydown", startMusic);
-    document.removeEventListener("touchstart", startMusic);
+
+    const playPromise = bgMusic.play();
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          document.removeEventListener("click", startMusic);
+          document.removeEventListener("keydown", startMusic);
+        })
+        .catch((error) => {
+          isAttemptingPlay = false;
+          console.warn("Autoplay prevented:", error);
+        });
+    }
   };
 
-  const toggleMusic = () => {
+  const toggleMusic = (e) => {
+    e.stopPropagation();
+
     if (bgMusic.paused) {
       bgMusic.play();
       toggleBtn.textContent = "Mute";
@@ -67,8 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("click", startMusic);
   document.addEventListener("keydown", startMusic);
-  document.addEventListener("touchstart", startMusic);
-  document.addEventListener("pointerdown", startMusic, { once: true });
 
   toggleBtn.addEventListener("click", toggleMusic);
 
