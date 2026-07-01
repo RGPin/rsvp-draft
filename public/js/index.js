@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
 
     if (bgMusic.paused) {
+      bgMusic.volume = 0.2;
       bgMusic.play();
       toggleBtn.textContent = "Mute";
     } else {
