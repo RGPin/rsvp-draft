@@ -98,6 +98,13 @@ a, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
+/* dusty blue: #5A86AD
+midnight blue: #191970
+powder blue: #B0E0E6
+beige: #F5F5DC
+taupe brown: #483C32
+offwhite: #FAF9F6 */
+
 
 
 /* Classic elegant: */
@@ -124,7 +131,7 @@ a, a:visited, a:hover, a:active {
 
   --heading-font: "Playfair Display", serif;
   --body-font: "Inter", sans-serif;
-  --color-bg: #FAF7F2;
+  /* --color-bg: #FAF7F2;
   --color-surface: #FFFFFF;
 
   --color-text-main: #3E2F2F;
@@ -132,12 +139,28 @@ a, a:visited, a:hover, a:active {
   --color-border: #E8DDD5;
 
   --color-primary: #C08497;
-  --color-primary-hover: #A96B80;
+  --color-primary-hover: #A96B80; */
+
+
+  /* The foundational canvas */
+  --color-bg: #FAF9F6;           /* Off-white: clean, soft background */
+  --color-surface: #F5F5DC;      /* Beige: subtle lift for cards/containers */
+  --color-border: #B0E0E6;       /* Powder blue: soft, non-intrusive divider lines */
+
+  /* Text & Typography (High contrast) */
+  --color-text-main: #191970;    /* Midnight blue: deep, highly legible body/headers */
+  --color-text-muted: #483C32;   /* Taupe brown: softer tone for captions/secondary text */
+
+  /* Actions & Branding */
+  --color-primary: #5A86AD;      /* Dusty blue: beautiful, clear accent for buttons/links */
+  --color-primary-hover: #191970;/* Midnight blue: darkens significantly on hover for clear feedback */
+
 
    /* Radii */
   --radius-sm: 6px;
   --radius-md: 12px;
 }
+
 
 html {
   scroll-behavior: smooth;
