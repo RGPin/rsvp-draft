@@ -40,6 +40,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const colorBg = getComputedStyle(root).getPropertyValue("--color-bg").trim();
   root.style.setProperty("--color-bg-fallback", `${colorBg}80`);
 
+  //----------------Audio----------------//
+  const bgMusic = document.querySelector("#bg-music");
+  const toggleBtn = document.querySelector("#toggle-music-btn");
+
+  const isPlaying =
+    !bgMusic.paused && !bgMusic.ended && bgMusic.currentTime > 0;
+
+  const startMusic = () => {
+    bgMusic.volume = 0.2;
+    bgMusic.play();
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("keydown", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  };
+
+  const toggleMusic = () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      toggleBtn.textContent = "Mute";
+    } else {
+      bgMusic.pause();
+      toggleBtn.textContent = "Play";
+    }
+  };
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("keydown", startMusic);
+  document.addEventListener("touchstart", startMusic);
+
+  toggleBtn.addEventListener("click", toggleMusic);
+
   //----------------Navbar----------------//
   const navToggle = document.querySelector(".nav-toggle");
   const navList = document.querySelector(".nav-list");

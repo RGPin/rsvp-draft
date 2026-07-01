@@ -15,10 +15,13 @@
     <title>Home</title>
   </head>
   <body>
+    <audio id="bg-music" autoplay loop>
+      <source src="/music.mp3" type="audio/mpeg" />
+    </audio>
     <div class="container">
       <div class="nav-container">
         <div class="nav-actions">
-          <button>Mute</button>
+          <button id="toggle-music-btn">Mute</button>
           <button>Dark</button>
         </div>
         <nav class="nav-bar">
