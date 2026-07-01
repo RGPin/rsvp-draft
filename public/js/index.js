@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", startMusic);
   document.addEventListener("keydown", startMusic);
   document.addEventListener("touchstart", startMusic);
+  document.addEventListener("pointerdown", startMusic, { once: true });
 
   toggleBtn.addEventListener("click", toggleMusic);
 
